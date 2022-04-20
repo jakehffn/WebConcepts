@@ -133,19 +133,20 @@ function setFocus() {
     // focus so that subsequent async focus will work
     fakeInput.focus()
   
+    userInput.setSelectionRange(10, 10);
     setTimeout(() => {
   
       // now we can focus on the target input
       userInput.focus()
-  
+      
       // cleanup
       fakeInput.remove()
       
     }, 1000)
-  
   }
 
 function setAtomValue() {
+  
     document.title = userInput.value;
     atomText = userInput.value + '|';
 
